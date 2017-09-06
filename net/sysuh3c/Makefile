@@ -9,8 +9,9 @@ PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
 include $(INCLUDE_DIR)/package.mk
 
 define Package/$(PKG_NAME)
-        SECTION:=utils
-        CATEGORY:=Utilities
+        SECTION:=net
+        CATEGORY:=Network
+	SUBMENU:=Sun-Yat-Sen University
         DEPENDS:=+libc +libgcc +libuci
         TITLE:=sysuh3c
         MAINTAINER:=zonyitoo
