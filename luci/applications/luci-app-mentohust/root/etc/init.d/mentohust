@@ -24,7 +24,7 @@ then
 	echo MaxFail=$(uci get mentohust.@mentohust[0].MaxFail) >> /etc/mentohust.conf
 	echo StartMode=0 >> /etc/mentohust.conf
 	echo DhcpMode=1 >> /etc/mentohust.conf
-	echo DaemonMode=0 >> /etc/mentohust.conf
+	echo DaemonMode=1 >> /etc/mentohust.conf
 	echo ShowNotify=0 >> /etc/mentohust.conf
 	echo Version=4.90 >> /etc/mentohust.conf
 	echo dhcpscript=$(uci get mentohust.@mentohust[0].dhcpscript) >> /etc/mentohust.conf
