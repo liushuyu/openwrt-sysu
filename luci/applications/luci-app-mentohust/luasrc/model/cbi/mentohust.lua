@@ -18,7 +18,7 @@ s.anonymous = true
 
 s:option(Flag, "enable", translate("MentoHUST_enable"), translate("enable or disable mentohust")).default="0"
 
-s:option(Flag, "boot", translate("Start at boot"), translate("Start mentohust when the route is booting.")).default="0"
+s:option(Flag, "boot", translate("Start at boot"), translate("Start mentohust when the router boots.")).default="0"
 
 
 s = m:section(TypedSection, "mentohust", translate("Config mentohust"),translate("The options below are all of mentohust's arguments."))
@@ -56,33 +56,6 @@ s:option(Value, "RestartWait", translate("wait on failure timeout(s)"),translate
 
 s:option(Value, "MaxFail", translate("max failure times"),translate("0 means no limit,default to 8")).default="8"
 
-t=s:option(ListValue, "StartMode", translate("mulcast address"),translate("default to 0"))
-t:value("0", translate("0(standard)"))
-t:value("1", translate("1(ruijjie)"))
-t:value("2", translate("2(saier)"))
-t.default = "0"
-
-t= s:option(ListValue, "DhcpMode", translate("DHCP type"),translate("default to 0"))
-t:value("0", translate("0(not in used)"))
-t:value("1", translate("1(secondary authenticate)"))
-t:value("2", translate("2(post authenticate)"))
-t:value("3", translate("3(pre authenticate)"))
-t.default = "0"
-
-t=s:option(ListValue, "DaemonMode", translate("run in demon mode"),translate("default to 0"))
-t:value("0", translate("0(no)"))
-t:value("1", translate("1(yes,turn off output)"))
-t:value("2", translate("2(yes,persevere output)"))
-t:value("3", translate("3(yes,output to file)"))
-t.default = "0"
-
-s:option(Value, "ShowNotify", translate("display notification"),translate("0(no),1-20(yes),default to 5")).default="5"
-
-s:option(Value, "Version", translate("client version"),translate("default to 0.00,compatible with xrgsu")).default="0.00"
-
-s:option(Value, "DataFile", translate("customized data file"),translate("not in used by default")).default="/etc/mentohust"
-
 s:option(Value, "dhcpscript", translate("DHCP script"),translate("use dhclient by default")).default="udhcpc -i"
-
 
 return m
