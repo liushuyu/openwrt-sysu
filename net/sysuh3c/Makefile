@@ -13,7 +13,7 @@ define Package/$(PKG_NAME)
         CATEGORY:=Network
 	SUBMENU:=Sun-Yat-Sen University
         DEPENDS:=+libc +libgcc +libuci
-        TITLE:=sysuh3c
+        TITLE:=SYSU East Campus H3C iNode client
         MAINTAINER:=zonyitoo
 endef
 
