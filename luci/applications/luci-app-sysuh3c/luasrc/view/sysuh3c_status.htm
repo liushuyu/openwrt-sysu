@@ -1,0 +1,27 @@
+<script type="text/javascript" src="<%=resource%>/cbi.js"></script>
+<script type="text/javascript">//<![CDATA[
+  var sysuh3cxhr = new XHR();  // Make XHR initialize
+  XHR.poll(3, '/cgi-bin/luci/admin/status/sysuh3c', null, function (e, r) {
+    document.getElementById('sysuh3c_stat').innerText = r.run;
+    if (r.started > 0) {
+      document.getElementById('sysuh3c_time').innerText = String.format('%t', Math.floor(Date.now() / 1000 - r.started));
+      document.getElementById('sysuh3c_usr').innerText = r.user;
+    } else {
+      document.getElementById('sysuh3c_time').innerText = '';
+      document.getElementById('sysuh3c_usr').innerText = '';
+    }
+    document.getElementById('sysuh3c_log').innerText = r.log;
+  });
+
+//]]></script>
+
+<fieldset class="cbi-section">
+  <legend><%:SYSU H3C Status%></legend>
+  <table width="100%" cellspacing="10">
+    <tr><td width="33%"><%:Status%></td><td id="sysuh3c_stat"><i><%:Please wait...%></i></td></tr>
+    <tr><td width="33%"><%:Authenticated User%></td><td id="sysuh3c_usr"></td></tr>
+    <tr><td width="33%"><%:Connected Period%></td><td id="sysuh3c_time"></td></tr>
+  </table>
+  <h5>SYSU H3C Log</h5>
+  <textarea readonly="readonly" wrap="off" id="sysuh3c_log"></textarea>
+</fieldset>

@@ -1,0 +1,43 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2014-2017 OpenWrt.org
+
+START=90
+STOP=10
+USE_PROCD=1
+
+append_arg() {
+  local cfg="$1"
+  local var="$2"
+  local opt="$3"
+  local def="$4"
+  local val
+
+  config_get val "$cfg" "$var"
+  [ -n "$val" -o -n "$def" ] && procd_append_param command $opt "${val:-$def}"
+}
+
+check_config() {
+  local buf
+  config_get_bool buf "$1" 'enabled' '0'
+  [ "$buf" = 0 ] && exit 1
+}
+
+start_instance() {
+  procd_open_instance
+  procd_set_param command /usr/bin/sysuh3c
+  procd_set_param respawn
+  append_arg "$1" username "-u"
+  append_arg "$1" method "-m"
+  append_arg "$1" pwd "-p"
+  procd_close_instance
+}
+
+service_triggers() {
+  procd_add_reload_trigger "sysuh3c"
+}
+
+start_service() {
+  config_load sysuh3c
+  config_foreach check_config network
+  config_foreach start_instance auth
+}

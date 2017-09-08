@@ -1,0 +1,53 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+msgid "Authenticated User"
+msgstr ""
+
+msgid "Authentication Settings"
+msgstr ""
+
+msgid "Connected Period"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "EAP-MD5 CHAP Method"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Interface"
+msgstr ""
+
+msgid "Network Settings"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Please wait..."
+msgstr ""
+
+msgid "SYSU H3C"
+msgstr ""
+
+msgid "SYSU H3C Status"
+msgstr ""
+
+msgid "SYSU H3C authenticator is <b>not running</b>"
+msgstr ""
+
+msgid "SYSU H3C authenticator is <b>running</b>"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "User Name"
+msgstr ""
