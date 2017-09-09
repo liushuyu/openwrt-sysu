@@ -1,8 +1,0 @@
-#! /bin/sh
-
-if ! uci get sysuh3c.@auth[0] 2>/dev/null 1>&2; then
-	echo auth section not found
-	uci add sysuh3c auth >/dev/null
-fi
-
-uci commit sysuh3c
