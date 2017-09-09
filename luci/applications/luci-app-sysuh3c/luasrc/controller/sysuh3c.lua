@@ -17,6 +17,7 @@ function action_sysuh3c_status()
   luci.http.prepare_content("application/json")
   if pid ~= "" then
     data["run"] = luci.i18n.translate("Enabled")
+    data["started"] = nixio.fs.stat("/var/run/sysuh3c.pid", "mtime") or -1
   else
     data["run"] = luci.i18n.translate("Disabled")
   end
