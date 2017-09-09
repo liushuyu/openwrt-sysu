@@ -1,9 +1,0 @@
-
-config network
-  option ifname 'eth0'
-  option enabled '0'
-
-config auth
-  option username ''
-  option pwd ''
-  option method 'xor'
